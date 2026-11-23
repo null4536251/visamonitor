@@ -1,11 +1,12 @@
 name: visaMonitor F-1
 
-# Every 5 minutes. NOTE: GitHub may delay scheduled runs under load, so real
+# Every 5 minutes, offset by 2 minutes to avoid the top of the hour.
+# NOTE: GitHub may delay scheduled runs under load, so real
 # cadence can drift to 5-15 min. Keep this repo PUBLIC so Actions minutes stay
 # free (a 5-min cron would blow the 2,000-min/month private-repo budget).
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "2-57/5 * * * *"
   # Run on demand from the Actions tab (or the GitHub mobile app) -- handy when
   # your local watcher isn't running, since only it can answer ntfy commands.
   workflow_dispatch:
